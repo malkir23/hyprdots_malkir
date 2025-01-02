@@ -224,12 +224,21 @@ fi
 
 # List of packages to install
 packages=(
-    "asusctl"
-    "supergfxctl"
-    "rog-control-center"
-    "telegram-desktop-bin"
-    "google-chrome"
-    "bitwarden"
+    asusctl
+    supergfxctl
+    rog-control-center
+    telegram-desktop-bin
+    google-chrome
+    bitwarden
+    docker
+    docker-compose
+    openrazer-daemon-git
+    openrazer-driver-dkms-git
+    openrazer-meta-git
+    python-openrazer-git
+    polychromatic-git
+    ttf-meslo-nerd
+    heroic-games-launcher-bin
 )
 
 # Create a file to store selected packages
