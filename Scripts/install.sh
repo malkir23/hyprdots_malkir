@@ -239,6 +239,7 @@ packages=(
     polychromatic-git
     ttf-meslo-nerd
     heroic-games-launcher-bin
+		thunderbird
 )
 
 # Create a file to store selected packages
