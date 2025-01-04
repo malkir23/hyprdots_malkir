@@ -179,15 +179,43 @@ text-shadow: none;
 }
 
 #language{
-	padding-left: 0px;
-	padding-right: 0px;
-	background-color: transparent;
-	color: rgb(207, 200, 93)
+	border-radius: 25px;
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: rgb(223, 207, 156);
+	color: rgb(97, 91, 5);
 }
 
 #custom-updates {
+	border-radius: 25px;
 	padding-left: 10px;
 	padding-right: 10px;
-	background-color: transparent;
-	color: rgb(93, 207, 99)
+	background-color: rgb(183, 235, 189);
+	color: rgb(93, 207, 99);
+}
+
+#window,
+#workspaces {
+	border-radius: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: rgb(60, 145, 202);
+	color: rgb(4, 76, 233);
+}
+
+#window,
+#workspaces button{
+	color:snow;
+}
+
+#window,
+#workspaces button.active{
+	background-color: rgb(73, 125, 160);
+	color: snow;
+}
+
+#window,
+#workspaces button:hover{
+	background-color: rgb(0, 153, 255);
 }
