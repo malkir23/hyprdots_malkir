@@ -1,3 +1,5 @@
+/* Оновлений стиль для Waybar за новим шаблоном */
+
 * {
 	border: none;
 	border-radius: 0px;
@@ -22,59 +24,47 @@ tooltip {
 
 #workspaces button {
 	box-shadow: none;
-text-shadow: none;
-	padding: 0px;
+	text-shadow: none;
+	padding: 0;
 	border-radius: 8px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-	margin-left: 0px;
-	padding-left: 2px;
-	padding-right: 2px;
-	margin-right: 0px;
-	color: @main-fg;
+	margin: 2px 0;
+	padding: 0 2px;
+	color: snow;
 	animation: ws_normal 20s ease-in-out 1;
 }
 
 #workspaces button.active {
-	background: @wb-act-bg;
-	color: @wb-act-fg;
-	margin-left: 2px;
-	padding-left: 11px;
-	padding-right: 11px;
-	margin-right: 2px;
+	background-color: rgb(73, 125, 160);
+	color: snow;
+	margin: 0 2px;
+	padding: 0 11px;
 	animation: ws_active 20s ease-in-out 1;
 	transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button:hover {
-	background: @wb-hvr-bg;
-	color: @wb-hvr-fg;
+	background-color: rgb(0, 153, 255);
+	color: snow;
 	animation: ws_hover 20s ease-in-out 1;
 	transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #taskbar button {
 	box-shadow: none;
-text-shadow: none;
-	padding: 0px;
+	text-shadow: none;
+	padding: 0;
 	border-radius: 8px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-	margin-left: 0px;
-	padding-left: 2px;
-	padding-right: 2px;
-	margin-right: 0px;
-	color: @wb-color;
+	margin: 2px 0;
+	padding: 0 2px;
+	color: snow;
 	animation: tb_normal 20s ease-in-out 1;
 }
 
 #taskbar button.active {
 	background: @wb-act-bg;
 	color: @wb-act-color;
-	margin-left: 2px;
-	padding-left: 11px;
-	padding-right: 11px;
-	margin-right: 2px;
+	margin: 0 2px;
+	padding: 0 11px;
 	animation: tb_active 20s ease-in-out 1;
 	transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -87,135 +77,47 @@ text-shadow: none;
 }
 
 #tray menu * {
-	min-height: 16px
+	min-height: 16px;
 }
 
 #tray menu separator {
-	min-height: 10px
+	min-height: 10px;
 }
 
-#backlight,
-#battery,
-#bluetooth,
-#custom-cava,
-#custom-cliphist,
-#clock,
-#custom-cpuinfo,
-#cpu,
-#custom-github_hyprdots,
-#custom-gpuinfo,
-#idle_inhibitor,
-#custom-keybindhint,
-#language,
-#memory,
-#mpris,
-#network,
-#custom-notifications,
-#custom-power,
-#privacy,
-#pulseaudio,
-#custom-spotify,
-#taskbar,
-#custom-theme,
-#tray,
-#custom-updates,
-#custom-wallchange,
-#custom-wbar,
-#window,
-#workspaces,
-#custom-l_end,
-#custom-r_end,
-#custom-sl_end,
-#custom-sr_end,
-#custom-rl_end,
-#custom-rr_end {
-	color: @main-fg;
-	background: @main-bg;
-	opacity: 1;
-	margin: 3px 0px 3px 0px;
-	padding-left: 4px;
-	padding-right: 4px;
+#workspaces, #taskbar {
+	padding: 0;
 }
 
-#workspaces,
-#taskbar {
-	padding: 0px;
+/* Common module styles */
+#workspaces, #taskbar, #cpu, #memory, #privacy, #idle_inhibitor, #clock,
+#custom-updates, #language, #backlight, #pulseaudio, #pulseaudio\\#microphone,
+#custom-keybindhint, #battery, #network, #bluetooth, #custom-wallchange,
+#custom-theme, #custom-wbar, #custom-cliphist, #custom-power, #custom-cpuinfo, #custom-gpuinfo, #custom-spotify {
+	margin: 3px 0;
+	padding: 0 4px;
+	border-radius: 7px;
 }
 
-#custom-r_end {
-	border-radius: 0px 19px 19px 0px;
-	margin-right: 8px;
-	padding-right: 0px;
-}
-
-#custom-l_end {
-	border-radius: 19px 0px 0px 19px;
-	margin-left: 8px;
-	padding-left: 0px;
-}
-
-#custom-sr_end {
-	border-radius: 0px;
-	margin-right: 8px;
-	padding-right: 0px;
-}
-
-#custom-sl_end {
-	border-radius: 0px;
-	margin-left: 8px;
-	padding-left: 0px;
-}
-
-#custom-rr_end {
-	border-radius: 0px 7px 7px 0px;
-	margin-right: 8px;
-	padding-right: 0px;
-}
-
-#custom-rl_end {
-	border-radius: 7px 0px 0px 7px;
-	margin-left: 8px;
-	padding-left: 0px;
-}
-
-#language{
-	border-radius: 25px;
-	margin-left: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: rgb(223, 207, 156);
-	color: rgb(97, 91, 5);
-}
-
-#custom-updates {
-	border-radius: 25px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: rgb(183, 235, 189);
-	color: rgb(93, 207, 99);
-}
-
-#window,
-#workspaces {
-	border-radius: 25px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: rgb(60, 145, 202);
-	color: rgb(4, 76, 233);
-}
-
-#window,
-#workspaces button{
-	color:snow;
-}
-
-#window,
-#workspaces button.active{
-	background-color: rgb(73, 125, 160);
-	color: snow;
-}
-
-#window,
-#workspaces button:hover{
-	background-color: rgb(0, 153, 255);
-}
+#workspaces { color: rgb(60, 145, 202); background-color: rgb(0, 145, 241); } /* Example: White background */
+#taskbar { color: rgb(100, 150, 200); background-color: @bar-bg; }
+#cpu { color: rgb(200, 100, 100); background-color: @bar-bg; }
+#memory { color: rgb(100, 200, 100); background-color: @bar-bg; } /* Example: Black background */
+#privacy { color: rgb(150, 150, 150); background-color: @bar-bg; }
+#idle_inhibitor { color: rgb(200, 200, 100); background-color: @bar-bg; }
+#clock { color: rgb(100, 100, 200); background-color: @bar-bg; }
+#custom-updates { color: rgb(183, 235, 189); background-color: @bar-bg; }
+#language { color: rgb(223, 207, 156); background-color: @bar-bg; }
+#backlight { color: rgb(150, 100, 200); background-color: @bar-bg; }
+#pulseaudio, #pulseaudio\\#microphone { color: rgb(200, 150, 100); background-color: @bar-bg; }
+#custom-keybindhint { color: rgb(100, 200, 200); background-color: @bar-bg; }
+#battery { color: rgb(200, 100, 150); background-color: @bar-bg; }
+#network { color: rgb(100, 150, 100); background-color: @bar-bg; }
+#bluetooth { color: rgb(150, 100, 150); background-color: @bar-bg; }
+#custom-wallchange { color: rgb(200, 150, 200); background-color: @bar-bg; }
+#custom-theme { color: rgb(150, 200, 100); background-color: @bar-bg; }
+#custom-wbar { color: rgb(100, 200, 150); background-color: @bar-bg; }
+#custom-cliphist { color: rgb(150, 200, 200); background-color: @bar-bg; }
+#custom-power { color: rgb(200, 200, 150); background-color: @bar-bg; }
+#custom-cpuinfo { color: rgb(200, 100, 50); background-color: @bar-bg; }
+#custom-gpuinfo { color: rgb(50, 100, 200); background-color: @bar-bg; }
+#custom-spotify { color: rgb(100, 50, 200); background-color: @bar-bg; }

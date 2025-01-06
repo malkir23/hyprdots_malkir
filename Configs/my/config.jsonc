@@ -17,45 +17,32 @@
 
   "modules-left": ["hyprland/workspaces", "wlr/taskbar", "custom/spotify"],
   "modules-center": [
-    "custom/padd",
-    "custom/l_end",
     "cpu",
     "memory",
     "custom/cpuinfo",
     "custom/gpuinfo",
-    "custom/r_end",
-    "custom/l_end",
     "privacy",
-    "custom/r_end",
-    "custom/l_end",
     "idle_inhibitor",
-    "clock",
-    "custom/r_end",
-    "custom/padd"
+    "clock"
   ],
   "modules-right": [
     "custom/updates",
     "hyprland/language",
-    "custom/padd",
-    "custom/l_end",
+
     "backlight",
     "pulseaudio",
     "pulseaudio#microphone",
     "custom/keybindhint",
     "battery",
-    "custom/r_end",
-    "custom/l_end",
+
     "network",
     "bluetooth",
-    "custom/r_end",
-    "custom/l_end",
+
     "custom/wallchange",
     "custom/theme",
     "custom/wbar",
     "custom/cliphist",
-    "custom/power",
-    "custom/r_end",
-    "custom/padd"
+    "custom/power"
   ],
 
   // sourced from modules based on config.ctl //
