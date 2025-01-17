@@ -15,15 +15,19 @@
 
   // positions generated based on config.ctl //
 
-  "modules-left": ["hyprland/workspaces", "wlr/taskbar", "custom/spotify"],
-  "modules-center": [
+  "modules-left": [
+    "hyprland/workspaces", "wlr/taskbar", "custom/spotify",
     "cpu",
     "memory",
     "custom/cpuinfo",
-    "custom/gpuinfo",
+    "custom/gpuinfo"
+
+  ],
+  "modules-center": [
+
     "privacy",
     "idle_inhibitor",
-    "clock"
+    "clock", "custom/notification"
   ],
   "modules-right": [
     "custom/updates",
@@ -171,6 +175,27 @@
     "on-scroll-down": "hyprctl dispatch workspace +1",
     "persistent-workspaces": {}
   },
+
+//   "hyprland/workspaces": {
+// 	"active-only": false,
+//     "all-outputs": true,
+//     "format": "{icon}",
+//     "show-special": false,
+//     "on-click": "activate",
+//     "on-scroll-up": "hyprctl dispatch workspace e+1",
+//     "on-scroll-down": "hyprctl dispatch workspace e-1",
+//     "persistent-workspaces": {
+//       "1": [],
+//       "2": [],
+//       "3": [],
+//       "4": [],
+//       "5": [],
+//     },
+//     "format-icons": {
+//       "active": "",
+//       "default": "",
+// 	},
+// },
 
   "hyprland/window": {
     "format": "  {}",
@@ -434,7 +459,7 @@
     "tooltip": true
   },
   "hyprland/language": {
-    "format": " {}",
+    "format": "{}",
     "format-en": "EN",
     "format-uk": "UA",
     "keyboard-name": "at-translated-set-2-keyboard"
@@ -453,5 +478,29 @@
       "firefoxdeveloperedition": "firefox-developer-edition",
       "jetbrains-datagrip": "DataGrip"
     }
+  },
+  "custom/cava_mviz": {
+    "exec": "~/.config/hypr/scripts/WaybarCava.sh",
+    "format": "{}"
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }
