@@ -232,11 +232,11 @@ packages=(
     bitwarden
     docker
     docker-compose
-    openrazer-daemon-git
-    openrazer-driver-dkms-git
-    openrazer-meta-git
-    python-openrazer-git
-    polychromatic-git
+    openrazer-daemon
+    openrazer-driver-dkms
+    openrazer-meta
+    python-openrazer
+    polychromatic
     ttf-meslo-nerd
     heroic-games-launcher-bin
 	thunderbird
