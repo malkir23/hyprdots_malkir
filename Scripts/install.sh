@@ -256,15 +256,4 @@ done
 
 echo "The list of selected packages has been saved to $output_file."
 echo "Run './install_program.sh' to install the selected packages."
-
-# Ask if the user wants to remove dunst
-read -p "Do you want to remove dunst? (y/n): " remove_dunst
-if [[ "$remove_dunst" =~ ^[Yy]$ ]]; then
-    echo "Removing dunst..."
-    sudo pacman -Rns dunst
-    echo "Installing swaync..."
-    sudo pacman -S swaync
-    echo "Copying swaync configuration files..."
-    cp -r "${scrDir}/Configs/my/swaync/" ~/.config/
-    echo "Configuration files copied to ~/.config/swaync."
-fi
+./install_program.sh

@@ -57,5 +57,38 @@ fi
 
 sudo pacman -S ttf-fira-code
 
+
+# Ask if the user wants to remove dunst
+read -p "Do you want to remove dunst? (y/n): " remove_dunst
+if [[ "$remove_dunst" =~ ^[Yy]$ ]]; then
+    echo "Removing dunst..."
+    sudo pacman -Rns dunst
+    echo "Installing swaync..."
+    sudo pacman -S swaync
+    echo "Copying swaync configuration files..."
+    cp -r "${scrDir}/Configs/my/swaync/" ~/.config/
+    echo "Configuration files copied to ~/.config/swaync."
+fi
+
+# Configure git global settings
+echo "Configuring git global settings..."
+git config --global user.name "malkir23"
+git config --global user.email "mandragorand@gmail.com"
+echo "Git global settings configured: name='malkir23', email='mandragorand@gmail.com'."
+
+# Generate SSH key if it doesn't exist
+ssh_key="$HOME/.ssh/id_rsa"
+if [[ ! -f "$ssh_key" ]]; then
+    echo "Generating SSH key..."
+    ssh-keygen -t rsa -b 4096 -f "$ssh_key" -N ""
+    echo "SSH key generated successfully."
+else
+    echo "SSH key already exists."
+fi
+
+# Display the SSH public key
+echo "Your SSH public key is:"
+cat "${ssh_key}.pub"
+
 openrazer-daemon -Fv
 echo "Installation process completed!"
