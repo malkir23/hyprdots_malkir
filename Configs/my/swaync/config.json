@@ -2,96 +2,140 @@
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
-	"cssPriority": "user",
-
-  "control-center-width": 380,
-  "control-center-height": 860, 
-  "control-center-margin-top": 2,
-  "control-center-margin-bottom": 2,
-  "control-center-margin-right": 1,
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "cssPriority": "application",
+  "control-center-width": 350,
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 0,
   "control-center-margin-left": 0,
-
-  "notification-window-width": 400,
-  "notification-icon-size": 48,
-  "notification-body-image-height": 160,
-  "notification-body-image-width": 200,
-
-  "timeout": 4,
-  "timeout-low": 2,
-  "timeout-critical": 6,
-  
-  "fit-to-screen": false,
+  "notification-2fa-action": true,
+  "notification-inline-replies": true,
+  "notification-window-width": 350,
+  "notification-icon-size": 60,
+  "notification-body-image-height": 180,
+  "notification-body-image-width": 180,
+  "timeout": 12,
+  "timeout-low": 6,
+  "timeout-critical": 1,
+  "fit-to-screen": true,
   "keyboard-shortcuts": true,
-  "image-visibility": "when-available",
+  "image-visibility": "when available",
   "transition-time": 200,
   "hide-on-clear": false,
-  "hide-on-action": false,
+  "hide-on-action": true,
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    }
-  },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  },
   "widgets": [
-    "label",
-    "buttons-grid",
     "mpris",
-    "title",
     "dnd",
-    "notifications"
+    "title",
+    "notifications",
+    "volume",
+    "microphone",
+    "backlight",
+    "backlight#KB",
+    "buttons-grid"
   ],
   "widget-config": {
     "title": {
-      "text": "Notifications",
+      "text": "Повідомлення",
       "clear-all-button": true,
-      "button-text": " 󰎟 "
+      "button-text": "󰆴"
     },
     "dnd": {
-      "text": "Do not disturb"
+      "text": "Не турбувати"
     },
     "label": {
       "max-lines": 1,
-      "text": " "
+      "text": "Notification Center!"
     },
     "mpris": {
       "image-size": 96,
       "image-radius": 12
     },
     "volume": {
-      "label": "󰕾",
-        "show-per-app": true
+      "label": "󰕾 "
+    },
+    "microphone": {
+      "label": "󰍭 ",
+      "command-increase": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+      "command-decrease": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+      "command-toggle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+      "sink": "@DEFAULT_SOURCE@",
+      "step": 5,
+      "show-percent": true
+    },
+    "backlight": {
+      "label": "󰃟 ",
+      "device": "acpi_video0",
+      "command-increase": "brightnessctl s +10%",
+      "command-decrease": "brightnessctl s 10%-",
+      "show-percent": true
+    },
+    "backlight#KB": {
+      "label": " ",
+      "device": "asus::kbd_backlight",
+      "subsystem": "leds"
     },
     "buttons-grid": {
       "actions": [
         {
-          "label": " ",
-          "command": "amixer set Master toggle"
+          "label": "󰝟",
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+          "type": "toggle"
         },
         {
-          "label": "",
-          "command": "amixer set Capture toggle"
+          "label": "󰍭",
+          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+          "type": "toggle"
         },
         {
-          "label": " ",
+          "label": "",
           "command": "nm-connection-editor"
         },
         {
-          "label": "󰂯",
+          "label": "",
           "command": "blueman-manager"
+        },
+        {
+          "label": "󰤄",
+          "command": "swaync-client -d",
+          "type": "toggle"
+        },
+        {
+          "label": "󰀟",
+          "command": "gnome-network-displays"
+        },
+        {
+          "label": "󰈙",
+          "command": "kitty bash -i -c 'Docs'"
+        },
+        {
+          "label": "",
+          "command": "kitty bash -i -c 'Settings'"
+        },
+        {
+          "label": "",
+          "command": "kitty bash -i -c 'tasks'"
+        },
+        {
+          "label": "",
+          "command": "hyprlock"
+        },
+        {
+          "label": "",
+          "command": "reboot"
+        },
+        {
+          "label": "",
+          "command": "logoutlaunch.sh 1"
         },
         {
           "label": "󰏘",
           "command": "nwg-look"
         }
-        
       ]
     }
   }
