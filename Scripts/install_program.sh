@@ -19,6 +19,7 @@ packages=(
     heroic-games-launcher-bin
 	thunderbird
     hyprlock
+    swayidle
 )
 
 # Create a file to store selected packages
