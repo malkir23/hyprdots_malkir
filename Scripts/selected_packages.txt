@@ -1,0 +1,16 @@
+asusctl
+supergfxctl
+rog-control-center
+telegram-desktop-bin
+google-chrome
+bitwarden
+docker
+docker-compose
+openrazer-daemon
+openrazer-driver-dkms
+openrazer-meta
+python-openrazer
+polychromatic
+ttf-meslo-nerd
+heroic-games-launcher-bin
+thunderbird

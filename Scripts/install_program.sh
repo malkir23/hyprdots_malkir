@@ -1,5 +1,39 @@
 #!/bin/bash
 
+# List of packages to install
+packages=(
+    asusctl
+    supergfxctl
+    rog-control-center
+    telegram-desktop-bin
+    google-chrome
+    bitwarden
+    docker
+    docker-compose
+    openrazer-daemon
+    openrazer-driver-dkms
+    openrazer-meta
+    python-openrazer
+    polychromatic
+    ttf-meslo-nerd
+    heroic-games-launcher-bin
+	thunderbird
+    hyprlock
+)
+
+# Create a file to store selected packages
+output_file="selected_packages.txt"
+> "$output_file" # Clear the file if it exists
+
+echo "Select packages to install:"
+for package in "${packages[@]}"; do
+    read -p "Do you want to install $package? (y/n): " answer
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+        echo "$package" >> "$output_file"
+    fi
+done
+
+echo "The list of selected packages has been saved to $output_file."
 # Check if yay is installed
 if ! command -v yay > /dev/null; then
     echo "Error: 'yay' is not installed. Please install it before running this script."
@@ -13,6 +47,11 @@ if [[ ! -f "$input_file" ]]; then
     echo "Error: The file '$input_file' does not exist. Run 'ask_install.sh' first."
     exit 1
 fi
+
+yay -Rsu pokemon-colorscripts-git
+
+cp -r "${scrDir}/Configs/my/Candy/" /usr/share/sddm/themes/Candy/
+cp -r "${scrDir}/Configs/my/.zshrc" /home/malkir/
 
 # Install the packages
 while IFS= read -r package; do

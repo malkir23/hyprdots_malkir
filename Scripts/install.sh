@@ -221,39 +221,4 @@ EOF
 fi
 
 # Ask user to install the programs
-
-# List of packages to install
-packages=(
-    asusctl
-    supergfxctl
-    rog-control-center
-    telegram-desktop-bin
-    google-chrome
-    bitwarden
-    docker
-    docker-compose
-    openrazer-daemon
-    openrazer-driver-dkms
-    openrazer-meta
-    python-openrazer
-    polychromatic
-    ttf-meslo-nerd
-    heroic-games-launcher-bin
-	thunderbird
-)
-
-# Create a file to store selected packages
-output_file="selected_packages.txt"
-> "$output_file" # Clear the file if it exists
-
-echo "Select packages to install:"
-for package in "${packages[@]}"; do
-    read -p "Do you want to install $package? (y/n): " answer
-    if [[ "$answer" =~ ^[Yy]$ ]]; then
-        echo "$package" >> "$output_file"
-    fi
-done
-
-echo "The list of selected packages has been saved to $output_file."
-echo "Run './install_program.sh' to install the selected packages."
 ./install_program.sh

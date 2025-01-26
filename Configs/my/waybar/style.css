@@ -1,0 +1,219 @@
+/* Оновлений стиль для Waybar за новим шаблоном */
+
+* {
+	border: none;
+	border-radius: 0px;
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	font-size: 10px;
+	min-height: 10px;
+}
+
+@import "theme.css";
+
+window#waybar {
+	background: @bar-bg;
+}
+
+tooltip {
+	background: @main-bg;
+	color: @main-fg;
+	border-radius: 7px;
+	border-width: 0px;
+}
+
+#workspaces button {
+	box-shadow: none;
+	text-shadow: none;
+	padding: 0;
+	border-radius: 8px;
+	margin: 2px 0;
+	padding: 0 2px;
+	color: snow;
+	animation: ws_normal 20s ease-in-out 1;
+}
+
+#workspaces button.active {
+	background-color: rgb(73, 125, 160);
+	color: snow;
+	margin: 0 2px;
+	padding: 0 11px;
+	animation: ws_active 20s ease-in-out 1;
+	transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+	background-color: rgb(0, 153, 255);
+	color: snow;
+	animation: ws_hover 20s ease-in-out 1;
+	transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button {
+	box-shadow: none;
+	text-shadow: none;
+	padding: 0;
+	border-radius: 8px;
+	margin: 2px 0;
+	padding: 0 2px;
+	color: snow;
+	animation: tb_normal 20s ease-in-out 1;
+}
+
+#taskbar button.active {
+	background: @wb-act-bg;
+	color: @wb-act-color;
+	margin: 0 2px;
+	padding: 0 11px;
+	animation: tb_active 20s ease-in-out 1;
+	transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover {
+	background: @wb-hvr-bg;
+	color: @wb-hvr-color;
+	animation: tb_hover 20s ease-in-out 1;
+	transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#tray menu * {
+	min-height: 16px;
+}
+
+#tray menu separator {
+	min-height: 10px;
+}
+
+#workspaces, #taskbar {
+	padding: 0;
+}
+
+/* Common module styles */
+#workspaces, #taskbar, #cpu, #memory, #privacy, #idle_inhibitor, #clock, #custom-cava_mviz
+#custom-updates, #language, #backlight, #pulseaudio, #pulseaudio\\#microphone,
+#custom-keybindhint, #battery, #network, #bluetooth, #custom-wallchange,
+#custom-theme, #custom-wbar, #custom-cliphist, #custom-power, #custom-cpuinfo, #custom-gpuinfo, #custom-spotify {
+	margin: 3px 0;
+	padding: 0 4px;
+	border-radius: 7px;
+}
+
+/* Material Design Colors */
+#workspaces {
+	color: rgb(33, 150, 243); /* Blue 500 */
+	background-color: rgb(25, 118, 210); /* Blue 700 */
+  }
+  
+  #taskbar {
+	color: rgb(96, 125, 139); /* Blue Grey 500 */
+	background-color: @bar-bg;
+	margin-left: 10px;
+  }
+  
+  #cpu {
+	color: rgb(244, 67, 54); /* Red 500 */
+	background-color: @bar-bg;
+	margin-left: 400px;
+  }
+  
+  #memory {
+	color: rgb(76, 175, 80); /* Green 500 */
+	background-color: @bar-bg;
+  }
+  
+  #privacy {
+	color: rgb(158, 158, 158); /* Grey 500 */
+	background-color: @bar-bg;
+  }
+  
+  #idle_inhibitor {
+	color: rgb(255, 235, 59); /* Yellow 500 */
+	background-color: @bar-bg;
+  }
+  
+  #clock {
+	color: rgb(63, 81, 181); /* Indigo 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-updates {
+	color: rgb(129, 199, 132); /* Light Green 400 */
+	background-color: @bar-bg;
+  }
+  
+  #language {
+	color: rgb(255, 193, 7); /* Amber 500 */
+	background-color: @bar-bg;
+  }
+  
+  #backlight {
+	color: rgb(103, 58, 183); /* Deep Purple 500 */
+	background-color: @bar-bg;
+  }
+  
+  #pulseaudio, #pulseaudio\\#microphone {
+	color: rgb(255, 152, 0); /* Orange 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-keybindhint {
+	color: rgb(3, 169, 244); /* Light Blue 500 */
+	background-color: @bar-bg;
+  }
+  
+  #battery {
+	color: rgb(233, 30, 99); /* Pink 500 */
+	background-color: @bar-bg;
+  }
+  
+  #network {
+	color: rgb(139, 195, 74); /* Light Green 500 */
+	background-color: @bar-bg;
+  }
+  
+  #bluetooth {
+	color: rgb(156, 39, 176); /* Purple 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-wallchange {
+	color: rgb(255, 87, 34); /* Deep Orange 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-theme {
+	color: rgb(205, 220, 57); /* Lime 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-wbar {
+	color: rgb(0, 188, 212); /* Cyan 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-cliphist {
+	color: rgb(77, 182, 172); /* Teal 400 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-power {
+	color: rgb(255, 238, 88); /* Yellow 400 */
+	background-color: @bar-bg;
+	margin: 0 15px;
+  }
+  
+  #custom-cpuinfo {
+	color: rgb(255, 87, 34); /* Deep Orange 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-gpuinfo {
+	color: rgb(33, 150, 243); /* Blue 500 */
+	background-color: @bar-bg;
+  }
+  
+  #custom-spotify {
+	color: rgb(156, 39, 176); /* Purple 500 */
+	background-color: @bar-bg;
+  }
+  
