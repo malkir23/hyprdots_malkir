@@ -119,7 +119,7 @@ echo "Git global settings configured: name='malkir23', email='mandragorand@gmail
 ssh_key="$HOME/.ssh/id_rsa"
 if [[ ! -f "$ssh_key" ]]; then
     echo "Generating SSH key..."
-    ssh-keygen -t rsa -b 4096 -f "$ssh_key" -N ""
+    ssh-keygen -t rsa -b 4096 -C "mandragorand@gmail.com"
     echo "SSH key generated successfully."
 else
     echo "SSH key already exists."
