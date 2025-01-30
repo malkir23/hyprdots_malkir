@@ -16,7 +16,8 @@ packages=(
     python-openrazer
     polychromatic
     ttf-meslo-nerd
-    heroic-games-launcher-bin
+    # heroic-games-launcher-bin
+    lutris
 	thunderbird
     hyprlock
     swayidle
@@ -110,10 +111,17 @@ if [[ "$remove_dunst" =~ ^[Yy]$ ]]; then
     echo "Configuration files copied to ~/.config/swaync."
 fi
 
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo systemctl start docker
+sudo systemctl enable docker
+
 # Configure git global settings
 echo "Configuring git global settings..."
 git config --global user.name "malkir23"
 git config --global user.email "mandragorand@gmail.com"
+git config --global core.editor "code --wait"
 echo "Git global settings configured: name='malkir23', email='mandragorand@gmail.com'."
 
 # Generate SSH key if it doesn't exist
