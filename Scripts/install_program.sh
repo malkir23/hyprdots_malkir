@@ -21,6 +21,7 @@ packages=(
 	thunderbird
     hyprlock
     swayidle
+    curseforge
 )
 
 # Create a file to store selected packages

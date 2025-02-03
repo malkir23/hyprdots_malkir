@@ -2,9 +2,7 @@
 {
   // sourced from header module //
   "layer": "top",
-  "output": [
-    "*"
-  ],
+  "output": ["*"],
   "position": "top",
   "mod": "dock",
   "height": 28,
@@ -38,16 +36,7 @@
     "format": "󰍛 {usage}%",
     "rotate": 0,
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": [
-      "▁",
-      "▂",
-      "▃",
-      "▄",
-      "▅",
-      "▆",
-      "▇",
-      "█"
-    ]
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
   },
   "memory": {
     "states": {
@@ -179,17 +168,7 @@
     "device": "intel_backlight",
     "rotate": 0,
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-up": "brightnesscontrol.sh i 1",
     "on-scroll-down": "brightnesscontrol.sh d 1",
     "min-length": 6
@@ -214,23 +193,8 @@
     "format-connected": " {num_connections}",
     "format-connected-battery": "{icon} {num_connections}",
     // "format-connected-battery": "{icon} {device_alias}-{device_battery_percentage}%",
-    "format-icons": [
-      "󰥇",
-      "󰤾",
-      "󰤿",
-      "󰥀",
-      "󰥁",
-      "󰥂",
-      "󰥃",
-      "󰥄",
-      "󰥅",
-      "󰥆",
-      "󰥈"
-    ],
-    "format-device-preference": [
-      "device1",
-      "device2"
-    ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
+    "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+    "format-device-preference": ["device1", "device2"], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
     "tooltip-format": "{controller_alias}\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
@@ -255,11 +219,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     }
   },
   "pulseaudio#microphone": {
@@ -323,19 +283,7 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "on-click": "rog-control-center"
   },
   "custom/wallchange": {
@@ -416,9 +364,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": [
-      "Alacritty"
-    ],
+    "ignore-list": ["Alacritty"],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition",
       "jetbrains-datagrip": "DataGrip"
@@ -473,7 +419,7 @@
       "pulseaudio#microphone",
       "battery",
       "network",
-      "bluetooth",
+      "bluetooth"
     ]
   }
 }
