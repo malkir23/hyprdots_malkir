@@ -21,6 +21,8 @@ packages=(
 	thunderbird
     gnome-keyring
     visual-studio-code-bin
+    obsidian
+    neofetch
 #     hyprlock
 #     swayidle
 #     curseforge
@@ -157,6 +159,9 @@ fi
 # Display the SSH public key
 echo "Your SSH public key is:"
 cat "${ssh_key}.pub"
+
+git clone --depth 1 https://gitlab.com/VandalByte/darkmatter-grub-theme.git && cd darkmatter-grub-theme
+sudo python3 darkmatter-theme.py --install
 
 openrazer-daemon -Fv
 echo "Installation process completed!"
