@@ -314,3 +314,4 @@ if [ $flg_Install -eq 1 ] ||
         echo "The system will not reboot"
     fi
 fi
+./install_program.sh
