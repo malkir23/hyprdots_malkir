@@ -30,7 +30,7 @@ jobs:
 
           # Calculate suggested merge date based on release policy
           # By default, suggesting next Monday as merge date - adjust according to your policy
-          MERGE_DATE="Late wednesday/early thursday"
+          MERGE_DATE="Friday"
 
           # Save commit list to a file (to handle multi-line output)
           echo "$COMMIT_LIST" > commit_list.txt
@@ -45,6 +45,7 @@ jobs:
           echo "" >> $GITHUB_ENV
           echo "## Suggested Merge Schedule" >> $GITHUB_ENV
           echo "According to our release policy, this PR is expected to be merged on: **$MERGE_DATE**" >> $GITHUB_ENV
+          echo "Testers are encouraged to test the changes before merging." >> $GITHUB_ENV
           echo "Please note that this schedule may be adjusted based on the needs of the project." >> $GITHUB_ENV
           echo "## Commits to be merged:" >> $GITHUB_ENV
           echo "---" >> $GITHUB_ENV
