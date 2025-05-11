@@ -17,7 +17,7 @@ packages=(
     polychromatic
     ttf-meslo-nerd
     # heroic-games-launcher-bin
-    lutris
+    # lutris
 	thunderbird
     gnome-keyring
     visual-studio-code-bin
