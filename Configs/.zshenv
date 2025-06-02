@@ -82,7 +82,7 @@ function _slow_load_warning {
                 configurations from your .zshrc file as HyDE will handle it for you.
             - Check the '.zshrc' file from the repo for a clean configuration.
                 https://github.com/HyDE-Project/HyDE/blob/master/Configs/.zshrc
-        3. Check the '~/.hyde.zshrc' file for any slow initialization scripts.
+        3. Check the '~/.user.zsh' file for any slow initialization scripts.
 
     For more information, on the possible causes of slow shell startup, see:
         🌐 https://github.com/HyDE-Project/HyDE/wiki
@@ -195,6 +195,14 @@ _fuzzy_edit_search_file() {
     fi
 }
 
+_df() {
+    if [[ $# -ge 1 && -e "${@: -1}" ]]; then
+        duf "${@: -1}"
+    else
+        duf
+    fi
+}
+
 function _load_post_init() {
     #! Never load time consuming functions here
     _load_persistent_aliases
@@ -292,7 +300,8 @@ function _load_if_terminal {
             mkdir='mkdir -p' \
             ffec='_fuzzy_edit_search_file_content' \
             ffcd='_fuzzy_change_directory' \
-            ffe='_fuzzy_edit_search_file'
+            ffe='_fuzzy_edit_search_file' \
+            df='_df'
 
         # Some binds won't work on first prompt when deferred
         bindkey '\e[H' beginning-of-line
@@ -306,14 +315,13 @@ function _load_if_terminal {
 
 # cleaning up home folder
 PATH="$HOME/.local/bin:$PATH"
-XDG_CONFIG_DIR="${XDG_CONFIG_DIR:-"$(xdg-user-dir CONFIG)"}"
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 XDG_DATA_DIRS="${XDG_DATA_DIRS:-$XDG_DATA_HOME:/usr/local/share:/usr/share}"
 XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 # XDG User Directories
-XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$(xdg-user-dir CONFIG)"}"
 XDG_DESKTOP_DIR="${XDG_DESKTOP_DIR:-"$(xdg-user-dir DESKTOP)"}"
 XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-"$(xdg-user-dir DOWNLOAD)"}"
 XDG_TEMPLATES_DIR="${XDG_TEMPLATES_DIR:-"$(xdg-user-dir TEMPLATES)"}"
@@ -343,7 +351,7 @@ setopt HIST_IGNORE_ALL_DUPS   # Delete an old recorded event if a new event is a
 # HyDE Package Manager
 PM_COMMAND=(hyde-shell pm)
 
-export XDG_CONFIG_HOME XDG_CONFIG_DIR XDG_DATA_HOME XDG_STATE_HOME \
+export XDG_CONFIG_HOME XDG_DATA_HOME XDG_STATE_HOME \
     XDG_CACHE_HOME XDG_DESKTOP_DIR XDG_DOWNLOAD_DIR \
     XDG_TEMPLATES_DIR XDG_PUBLICSHARE_DIR XDG_DOCUMENTS_DIR \
     XDG_MUSIC_DIR XDG_PICTURES_DIR XDG_VIDEOS_DIR \
